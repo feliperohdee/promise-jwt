@@ -25,15 +25,15 @@ jwt.then(token => {
 
 // should verify
 jwt.then(token => {
-    return verify(token, secret);
-})
-.then(payload => {
-    assert.deepStrictEqual(payload, {
-        role: 'admin',
-        user: 'admin',
-        iat: payload.iat
+        return verify(token, secret);
+    })
+    .then(payload => {
+        assert.deepStrictEqual(payload, {
+            role: 'admin',
+            user: 'admin',
+            iat: payload.iat
+        });
     });
-});
 
 // handle invalid signature
 jwt.then(token => {

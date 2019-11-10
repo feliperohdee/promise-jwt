@@ -1,9 +1,15 @@
 {
-  "name": "smallorange-jwt",
-  "version": "1.0.0",
-  "main": "index.js",
-  "license": "MIT",
-  "dependencies": {
-    "jsonwebtoken": "^8.2.2"
-  }
+    "name": "promise-jwt",
+    "version": "1.0.0",
+    "main": "index.js",
+    "license": "MIT",
+    "scripts": {
+        "eslint": "eslint . --ext .js --config node_modules/eslint-config/index.js"
+    },
+    "dependencies": {
+        "jsonwebtoken": "^8.5.1"
+    },
+    "devDependencies": {
+        "eslint": "^6.6.0"
+    }
 }
