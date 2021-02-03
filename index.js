@@ -3,7 +3,9 @@ const jwt = require('jsonwebtoken');
 	json: force JSON.parse on the payload even if the header doesn't contain "typ":"JWT".
 	complete: return an object with the decoded payload and header.
  */
-const decode = (token, options = {}) => jwt.decode(token, options);
+const decode = token => {
+	return jwt.decode(token);
+};
 
 /*
 	algorithm (default: HS256)
@@ -16,7 +18,7 @@ const decode = (token, options = {}) => jwt.decode(token, options);
 	noTimestamp
 	header
  */
-const sign = (payload, secret = '', options = {}) => {
+const sign = async (payload, secret = '', options = {}) => {
 	return new Promise((resolve, reject) => {
 		jwt.sign(payload, secret, options, (err, token) => {
 			if (err) {
@@ -37,7 +39,7 @@ const sign = (payload, secret = '', options = {}) => {
 	subject: if you want to check subject (sub), provide a value here
 	clockTolerance: number of seconds to tolerate when checking the nbf and exp claims, to deal with small clock differences among different servers
  */
-const verify = (token, secret = '', options = {}) => {
+const verify = async (token, secret = '', options = {}) => {
 	return new Promise((resolve, reject) => {
 		jwt.verify(token, secret, options, (err, token) => {
 			if (err) {
