@@ -7,7 +7,7 @@
         "eslint": "eslint . --ext .js --config node_modules/eslint-config/index.js"
     },
     "dependencies": {
-        "jsonwebtoken": "^8.5.1"
+        "jsonwebtoken": "^9.0.0"
     },
     "devDependencies": {
         "eslint": "^6.6.0"
